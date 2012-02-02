@@ -1,0 +1,148 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cleartype" content="on" /> <!-- Cleartype for Mobile IE -->
+
+<link rel="stylesheet" href="/_assets/css/style.css" type="text/css" media="screen" />
+
+<script type="text/javascript" language="Javascript" src="/_assets/js/zepto.min.js"></script>
+
+<script type="text/javascript" language="Javascript" src="/_assets/js/script.js"></script>
+
+</head>
+
+<body>
+
+<div id="toolbar" class="toolbar clearfix">
+  <div class="toolbar-menu clearfix">
+    <h1>Create Article</h1>
+  </div>
+</div>
+
+<div id="page">
+<div class="clearfix" id="content">
+  <form accept-charset="UTF-8" id="article-node-form" method="post" action="/node/add/article" enctype="multipart/form-data" class="node-form node-article-form"><div><div class="form-item form-type-textfield form-item-title">
+  <label for="edit-title">Title <span title="This field is required." class="form-required">*</span></label>
+ <input type="text" class="form-text required" maxlength="255" size="60" value="" name="title" id="edit-title">
+</div>
+<div id="edit-body" class="field-type-text-with-summary field-name-body field-widget-text-textarea-with-summary form-wrapper"><div id="body-add-more-wrapper"><div class="text-format-wrapper"><div class="text-summary-wrapper text-summary-wrapper-processed" style="display: none;"><div class="form-item form-type-textarea form-item-body-und-0-summary">
+  <label for="edit-body-und-0-summary">Summary </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea rows="5" cols="60" name="body[und][0][summary]" id="edit-body-und-0-summary" class="text-summary form-textarea text-summary-processed"></textarea><div class="grippie"></div></div>
+<div class="description">Leave blank to use trimmed value of full text as the summary.</div>
+</div>
+</div><div class="form-item form-type-textarea form-item-body-und-0-value">
+  <label for="edit-body-und-0-value">Body <span class="field-edit-link">(<a href="#" class="link-edit-summary">Edit summary</a>)</span></label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea rows="20" cols="60" name="body[und][0][value]" id="edit-body-und-0-value" class="text-full form-textarea"></textarea><div class="grippie"></div></div>
+</div>
+<fieldset id="edit-body-und-0-format" class="filter-wrapper form-wrapper"><div class="fieldset-wrapper"><div id="edit-body-und-0-format-help" class="filter-help form-wrapper"><p><a href="/filter/tips">More information about text formats</a></p></div><div class="form-item form-type-select form-item-body-und-0-format">
+  <label for="edit-body-und-0-format--2">Text format </label>
+ <select name="body[und][0][format]" id="edit-body-und-0-format--2" class="filter-list form-select"><option selected="selected" value="filtered_html">Filtered HTML</option><option value="full_html">Full HTML</option><option value="plain_text">Plain text</option></select>
+</div>
+<div id="edit-body-und-0-format-guidelines" class="filter-guidelines form-wrapper filter-guidelines-processed"><div class="filter-guidelines-item filter-guidelines-filtered_html" style="display: block;"><h3 style="display: none;">Filtered HTML</h3><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;blockquote&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Lines and paragraphs break automatically.</li></ul></div><div class="filter-guidelines-item filter-guidelines-full_html" style="display: none;"><h3 style="display: none;">Full HTML</h3><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Lines and paragraphs break automatically.</li></ul></div><div class="filter-guidelines-item filter-guidelines-plain_text" style="display: none;"><h3 style="display: none;">Plain text</h3><ul class="tips"><li>No HTML tags allowed.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Lines and paragraphs break automatically.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><div id="edit-field-tags" class="field-type-taxonomy-term-reference field-name-field-tags field-widget-taxonomy-autocomplete form-wrapper"><div class="form-item form-type-textfield form-item-field-tags-und" role="application">
+  <label for="edit-field-tags-und">Tags </label>
+ <input type="text" class="form-text form-autocomplete" maxlength="1024" size="60" value="" name="field_tags[und]" id="edit-field-tags-und" autocomplete="OFF" aria-autocomplete="list"><input type="hidden" class="autocomplete autocomplete-processed" disabled="disabled" value="http://example.d8mux.org/taxonomy/autocomplete/field_tags" id="edit-field-tags-und-autocomplete">
+<div class="description">Enter a comma-separated list of words to describe your content.</div>
+<span aria-live="assertive" class="element-invisible" id="edit-field-tags-und-autocomplete-aria-live"></span></div>
+</div><div id="edit-field-image" class="field-type-image field-name-field-image field-widget-image-image form-wrapper"><div id="edit-field-image-und-0-ajax-wrapper"><div class="form-item form-type-managed-file form-item-field-image-und-0">
+  <label for="edit-field-image-und-0">Image </label>
+ <div class="image-widget form-managed-file clearfix"><div class="image-widget-data"><input type="file" class="form-file" size="22" name="files[field_image_und_0]" id="edit-field-image-und-0-upload"><input type="submit" class="form-submit ajax-processed" value="Upload" name="field_image_und_0_upload_button" id="edit-field-image-und-0-upload-button"><input type="hidden" value="0" name="field_image[und][0][fid]">
+<input type="hidden" value="1" name="field_image[und][0][display]">
+</div></div>
+<div class="description">Upload an image to go with this article.<br>Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>png gif jpg jpeg</strong>.</div>
+</div>
+</div></div><input type="hidden" value="" name="changed">
+<input type="hidden" value="form-z-azNTdmYxE4eFtCNlqfkeX_D2R0TALAW483qe60J6s" name="form_build_id">
+<input type="hidden" value="article_node_form" name="form_id">
+<h2 class="element-invisible">Vertical Tabs</h2><div class="vertical-tabs clearfix"><ul class="vertical-tabs-list"><li tabindex="-1" class="vertical-tab-button first selected"><a href="#"><strong>Menu settings</strong><span class="summary">Not in menu</span><span class="element-invisible" id="active-vertical-tab">(active tab)</span></a></li><li tabindex="-1" class="vertical-tab-button"><a href="#"><strong>Revision information</strong><span class="summary">No revision</span></a></li><li tabindex="-1" class="vertical-tab-button"><a href="#"><strong>URL path settings</strong><span class="summary">No alias</span></a></li><li tabindex="-1" class="vertical-tab-button"><a href="#"><strong>Comment settings</strong><span class="summary">Open</span></a></li><li tabindex="-1" class="vertical-tab-button"><a href="#"><strong>Authoring information</strong><span class="summary">By Anonymous</span></a></li><li tabindex="-1" class="vertical-tab-button last"><a href="#"><strong>Publishing options</strong><span class="summary">Published, Promoted to front page</span></a></li></ul><div class="vertical-tabs-panes vertical-tabs-processed"><fieldset id="edit-menu" class="menu-link-form form-wrapper vertical-tabs-pane"><legend><span class="fieldset-legend">Menu settings</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-checkbox form-item-menu-enabled">
+ <input type="checkbox" class="form-checkbox" value="1" name="menu[enabled]" id="edit-menu-enabled">  <label for="edit-menu-enabled" class="option">Provide a menu link </label>
+
+</div>
+<div class="form-wrapper" id="edit-menu--2" style="display: none;"><div class="form-item form-type-textfield form-item-menu-link-title">
+  <label for="edit-menu-link-title">Menu link title </label>
+ <input type="text" class="form-text" maxlength="128" size="60" value="" name="menu[link_title]" id="edit-menu-link-title">
+</div>
+<div class="form-item form-type-textarea form-item-menu-description">
+  <label for="edit-menu-description">Description </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="form-textarea" rows="1" cols="60" name="menu[description]" id="edit-menu-description"></textarea><div class="grippie"></div></div>
+<div class="description">Shown when hovering over the menu link.</div>
+</div>
+<div class="form-item form-type-select form-item-menu-parent">
+  <label for="edit-menu-parent">Parent item </label>
+ <select name="menu[parent]" id="edit-menu-parent" class="menu-parent-select form-select"><option selected="selected" value="main-menu:0">&lt;Main menu&gt;</option><option value="main-menu:227">-- Home</option></select>
+</div>
+<div class="form-item form-type-select form-item-menu-weight">
+  <label for="edit-menu-weight">Weight </label>
+ <select class="form-select" name="menu[weight]" id="edit-menu-weight"><option value="-50">-50</option><option value="-49">-49</option><option value="-48">-48</option><option value="-47">-47</option><option value="-46">-46</option><option value="-45">-45</option><option value="-44">-44</option><option value="-43">-43</option><option value="-42">-42</option><option value="-41">-41</option><option value="-40">-40</option><option value="-39">-39</option><option value="-38">-38</option><option value="-37">-37</option><option value="-36">-36</option><option value="-35">-35</option><option value="-34">-34</option><option value="-33">-33</option><option value="-32">-32</option><option value="-31">-31</option><option value="-30">-30</option><option value="-29">-29</option><option value="-28">-28</option><option value="-27">-27</option><option value="-26">-26</option><option value="-25">-25</option><option value="-24">-24</option><option value="-23">-23</option><option value="-22">-22</option><option value="-21">-21</option><option value="-20">-20</option><option value="-19">-19</option><option value="-18">-18</option><option value="-17">-17</option><option value="-16">-16</option><option value="-15">-15</option><option value="-14">-14</option><option value="-13">-13</option><option value="-12">-12</option><option value="-11">-11</option><option value="-10">-10</option><option value="-9">-9</option><option value="-8">-8</option><option value="-7">-7</option><option value="-6">-6</option><option value="-5">-5</option><option value="-4">-4</option><option value="-3">-3</option><option value="-2">-2</option><option value="-1">-1</option><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option></select>
+<div class="description">Menu links with smaller weights are displayed before links with larger weights.</div>
+</div>
+</div></div></fieldset>
+<fieldset id="edit-revision-information" class="node-form-revision-information form-wrapper vertical-tabs-pane" style="display: none;"><legend><span class="fieldset-legend">Revision information</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-checkbox form-item-revision">
+ <input type="checkbox" class="form-checkbox" value="1" name="revision" id="edit-revision">  <label for="edit-revision" class="option">Create new revision </label>
+
+</div>
+<div class="form-item form-type-textarea form-item-log">
+  <label for="edit-log">Revision log message </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="form-textarea" rows="4" cols="60" name="log" id="edit-log"></textarea><div class="grippie"></div></div>
+<div class="description">Provide an explanation of the changes you are making. This will help other authors understand your motivations.</div>
+</div>
+</div></fieldset>
+<fieldset id="edit-path" class="path-form form-wrapper vertical-tabs-pane" style="display: none;"><legend><span class="fieldset-legend">URL path settings</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-textfield form-item-path-alias">
+  <label for="edit-path-alias">URL alias </label>
+ <input type="text" class="form-text" maxlength="255" size="60" value="" name="path[alias]" id="edit-path-alias">
+<div class="description">Optionally specify an alternative URL by which this content can be accessed. For example, type "about" when writing an about page. Use a relative path and don't add a trailing slash or the URL alias won't work.</div>
+</div>
+</div></fieldset>
+<fieldset id="edit-comment-settings" class="comment-node-settings-form form-wrapper vertical-tabs-pane" style="display: none;"><legend><span class="fieldset-legend">Comment settings</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-radios form-item-comment">
+  <label for="edit-comment" class="element-invisible">Comments </label>
+ <div class="form-radios" id="edit-comment"><div class="form-item form-type-radio form-item-comment">
+ <input type="radio" class="form-radio" checked="checked" value="2" name="comment" id="edit-comment-2">  <label for="edit-comment-2" class="option">Open </label>
+
+<div class="description">Users with the "Post comments" permission can post comments.</div>
+</div>
+<div class="form-item form-type-radio form-item-comment">
+ <input type="radio" class="form-radio" value="1" name="comment" id="edit-comment-1">  <label for="edit-comment-1" class="option">Closed </label>
+
+<div class="description">Users cannot post comments.</div>
+</div>
+</div>
+</div>
+</div></fieldset>
+<fieldset id="edit-author" class="node-form-author form-wrapper vertical-tabs-pane" style="display: none;"><legend><span class="fieldset-legend">Authoring information</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Authored by </label>
+ <input type="text" class="form-text" maxlength="60" size="60" value="" name="name" id="edit-name">
+<div class="description">Leave blank for <em class="placeholder">Anonymous</em>.</div>
+</div>
+<div class="form-item form-type-textfield form-item-date">
+  <label for="edit-date">Authored on </label>
+ <input type="text" class="form-text" maxlength="25" size="60" value="" name="date" id="edit-date">
+<div class="description">Format: <em class="placeholder">2012-01-16 14:45:20 +0000</em>. The date format is YYYY-MM-DD and <em class="placeholder">+0000</em> is the time zone offset from UTC. Leave blank to use the time of form submission.</div>
+</div>
+</div></fieldset>
+<fieldset id="edit-options" class="node-form-options form-wrapper vertical-tabs-pane" style="display: none;"><legend><span class="fieldset-legend">Publishing options</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-checkbox form-item-status">
+ <input type="checkbox" class="form-checkbox" checked="checked" value="1" name="status" id="edit-status">  <label for="edit-status" class="option">Published </label>
+
+</div>
+<div class="form-item form-type-checkbox form-item-promote">
+ <input type="checkbox" class="form-checkbox" checked="checked" value="1" name="promote" id="edit-promote">  <label for="edit-promote" class="option">Promoted to front page </label>
+
+</div>
+<div class="form-item form-type-checkbox form-item-sticky">
+ <input type="checkbox" class="form-checkbox" value="1" name="sticky" id="edit-sticky">  <label for="edit-sticky" class="option">Sticky at top of lists </label>
+
+</div>
+</div></fieldset>
+<input type="hidden" value="edit-menu" name="additional_settings__active_tab" class="vertical-tabs-active-tab">
+</div></div><div id="edit-actions" class="form-actions form-wrapper"><input type="submit" class="form-submit" value="Save" name="op" id="edit-submit"><input type="submit" class="form-submit" value="Preview" name="op" id="edit-preview"></div></div></form>
+</div></div>
+
+</body>
+
+</html>
