@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="/_assets/css/animate.css" type="text/css" media="screen" />
 <script>window.scroll(0, 0); </script>
 <script type="text/javascript" language="Javascript" src="/_assets/js/zepto.min.js"></script>
+<script type="text/javascript" language="Javascript" src="/_assets/js/swipe.js"></script>
+
 
 <script type="text/javascript" language="Javascript" src="/_assets/js/script.js"></script>
 
@@ -20,19 +22,47 @@
 
 <body>
 <div class="ui-loader"><h1>Loading</h1><img src="/_assets/img/ajax-loader.png" class="ui-icon" /></div>
-  <div id="toolbar" class="toolbar clearfix">
-    <div class="toolbar-menu clearfix">
-      <h1>Administration</h1>
-    </div>
-  </div>
-  
-<div id="wrapper">  
 
-  <div id="page" class="page slide">
-    <div class="content">
-    <ul class="admin-list"><li class="leaf"><a href="/content">Content<span class="description">Administer content and comments.</span></a></li><li class="leaf"><a href="/structure">Structure<span class="description">Administer blocks, content types, menus, etc.</span></a></li><li class="leaf"><a href="/appearance">Appearance<span class="description">Select and configure your themes.</span></a></li><li class="leaf"><a href="/people">People<span class="description">Manage user accounts, roles, and permissions.</span></a></li><li class="leaf"><a href="/modules">Modules<span class="description">Extend site functionality.</span></a></li><li class="leaf"><a href="/configuration">Configuration<span class="description">Administer settings.</span></a></li><li class="leaf"><a href="/reports">Reports<span class="description">View reports, updates, and errors.</span></a></li></ul>
+<div id="wrapper"> 
+
+<ul class="slider">
+  <li class="current">
+  
+    <div id="toolbar" class="toolbar clearfix">
+      <div class="toolbar-menu clearfix">
+        <h1>Administration</h1>
+      </div>
+    </div> 
+  
+    
+    <div class="page">
+      <div class="content">
+      <ul class="admin-list"><li class="leaf"><a href="/content">Content<span class="description">Administer content and comments.</span></a></li><li class="leaf"><a href="/structure">Structure<span class="description">Administer blocks, content types, menus, etc.</span></a></li><li class="leaf"><a href="/appearance">Appearance<span class="description">Select and configure your themes.</span></a></li><li class="leaf"><a href="/people">People<span class="description">Manage user accounts, roles, and permissions.</span></a></li><li class="leaf"><a href="/modules">Modules<span class="description">Extend site functionality.</span></a></li><li class="leaf"><a href="/configuration">Configuration<span class="description">Administer settings.</span></a></li><li class="leaf"><a href="/reports">Reports<span class="description">View reports, updates, and errors.</span></a></li></ul>
+      </div>
     </div>
+    
+  </li>
+  
+  <li>
+  
+  <div id="content" class="clearfix">
+        <div class="element-invisible"><a id="main-content"></a></div>
+                            <div class="region region-content">
+      <div id="block-system-main" class="block block-system">
+  
+      
+    <div class="content">
+      <ul class="admin-list">
+      <li class="leaf"><a href="/content/add">Add Content<div class="description">Add a new piece of content</div></a></li>
+      <li class="leaf"><a href="/content/list">List Content<div class="description">Browse a list of published and pending content, filter by type etc.</div></a></li>
+      <li class="leaf"><a href="/content/comments">List Comments<div class="description">Browse a list of published and pending comments, filter by type etc.</div></a></li>
+      </ul>  </div>
   </div>
+    </div>
+      </div>
+  
+  </li>
+</ul>
 
 </div>
 </body>
