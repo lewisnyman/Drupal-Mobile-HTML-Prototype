@@ -4,8 +4,12 @@ function ready() {
 var adminlinks = $('.admin-list .leaf a');
 
 window.slider = new Swipe(
-  document.getElementById('wrapper')
-);
+  document.getElementById('wrapper'), {
+  callback: function(e, pos) {
+    setCurrentSlide();
+  },
+  }
+); 
 
 adminlinks
   .live('click', function(event) {
@@ -25,7 +29,7 @@ adminlinks
   });
 
   $(window).bind('popstate', function() {
-  slider.prev();
+    slider.prev();
   })
 
 }
@@ -33,17 +37,49 @@ adminlinks
 Zepto.fn.loadNextPage = function() {
   var o = $(this[0]) // It's your element
   var url = o.attr('href');
-      console.log('Loading ' + url);
-  var nextpage = $('.slider li.current + li');
+  console.log('Loading ' + url);
+  var nextpage = $('.slider > li.current + li');
+ if (nextpage.length == 0) {//Create a new li if we need one
+    addNewStep(function() {
+    nextpage = $('.slider > li.current + li');  
+  });
+ } 
+ $('body').addClass('ui-loading');
   nextpage.load(url, function() {
     console.log('Loaded ' + url);
-      slider.next();
-      var pos = slider.getPost();
-      $('.slider li').removeClass('current');
-      $('.slider li:eq(' + pos + ')').addClass('current');
+     $('body').removeClass('ui-loading');
+    slider.next();
+    removeFutureSteps();
   })
 
 };
+
+function addNewStep(callback) {
+  console.log('Creating new li');
+  $(".slider").append('<li></li>');
+  slider.setup();
+  callback();
+}
+
+function removeFutureSteps() {
+   var pos = slider.getPos();
+   $('.slider > li').each(function(index) {
+     console.log('pos = ' + pos);
+     console.log('Checking step ' + index);
+       if(index > pos) {
+         $(this).remove();
+       }
+   });
+   slider.setup();
+}
+
+function setCurrentSlide() {
+  var pos = slider.getPos();
+  pos++;
+  console.log('Current is ' + pos)
+  $('.slider > li').removeClass('current');
+  $('.slider > li:nth-child(' + pos + ')').addClass('current');
+}
 
 
 function isTouch() {
