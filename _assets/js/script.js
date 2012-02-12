@@ -36,7 +36,7 @@ adminlinks
 
 Zepto.fn.loadNextPage = function() {
   var o = $(this[0]) // It's your element
-  var url = o.attr('href');
+  var url = o.attr('href') + '/ #wrapper';
   console.log('Loading ' + url);
   var nextpage = $('.slider > li.current + li');
  if (nextpage.length == 0) {//Create a new li if we need one
