@@ -1,51 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><head profile="http://www.w3.org/1999/xhtml/vocab">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" href="http://test.d8mux.org/misc/favicon.ico" type="image/vnd.microsoft.icon">
-<meta name="Generator" content="Drupal 8 (http://drupal.org)">
-<link rel="alternate" type="application/rss+xml" title="test.d8mux.org RSS" href="http://test.d8mux.org/rss.xml">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cleartype" content="on" /> <!-- Cleartype for Mobile IE -->
+
   <title>Drupal Mobile Navigation Prototype</title>
-  <style type="text/css" media="all">@import url("http://test.d8mux.org/modules/system/system.base.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/system/system.menus.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/system/system.messages.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/system/system.theme.css?lqjj8h");</style>
-<style type="text/css" media="all">@import url("http://test.d8mux.org/modules/overlay/overlay-parent.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/contextual/contextual.css?lqjj8h");</style>
-<style type="text/css" media="all">@import url("http://test.d8mux.org/modules/comment/comment.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/field/theme/field.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/node/node.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/search/search.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/user/user.css?lqjj8h");</style>
-<style type="text/css" media="all">@import url("http://test.d8mux.org/modules/shortcut/shortcut.css?lqjj8h");
-@import url("http://test.d8mux.org/modules/toolbar/toolbar.css?lqjj8h");</style>
-<style type="text/css" media="all">@import url("http://test.d8mux.org/themes/bartik/css/layout.css?lqjj8h");
-@import url("http://test.d8mux.org/themes/bartik/css/style.css?lqjj8h");
-@import url("http://test.d8mux.org/themes/bartik/css/colors.css?lqjj8h");</style>
-<style type="text/css" media="print">@import url("http://test.d8mux.org/themes/bartik/css/print.css?lqjj8h");</style>
+  <style type="text/css" media="all">@import url("/_assets/front/modules/system/system.base.css?lqjj8h");
+</style>
+<style type="text/css" media="all">
+@import url("/_assets/front/modules/contextual/contextual.css?lqjj8h");</style>
+<style type="text/css" media="all">
+@import url("/_assets/front/bartik/css/style.css?lqjj8h");
+@import url("/_assets/front/bartik/css/colors.css?lqjj8h");</style>
+
 
   <link type="text/css" rel="stylesheet" href="/_assets/front/d8mux.css" media="all" />
   
    <link type="text/css" rel="stylesheet" href="/_assets/css/style.css" media="all" />
 
-<!--[if lte IE 7]>
-<link type="text/css" rel="stylesheet" href="/_assets/front/bartik/css/ie.css?lqjj8h" media="all" />
-<![endif]-->
+<script type="text/javascript" language="Javascript" src="/_assets/js/zepto.min.js"></script>
+<script type="text/javascript" language="Javascript" src="/_assets/js/swipe.js"></script>
 
-<!--[if IE 6]>
-<link type="text/css" rel="stylesheet" href="/_assets/front/bartik/css/ie6.css?lqjj8h" media="all" />
-<![endif]-->
-  <script type="text/javascript" src="/_assets/front/jquery_003.js"></script>
-<script type="text/javascript" src="/_assets/front/jquery.js"></script>
-<script type="text/javascript" src="/_assets/front/drupal.js"></script>
-<script type="text/javascript" src="/_assets/front/jquery_002.js"></script>
-<script type="text/javascript" src="/_assets/front/contextual.js"></script>
-<script type="text/javascript" src="/_assets/front/jquery_004.js"></script>
-<script type="text/javascript" src="/_assets/front/toolbar.js"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bartik","theme_token":"FWq76tNdTVK3hfq78ogqIp_dcay8HzI8fQz5QfkYTec","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.ba-bbq.js":1,"modules\/overlay\/overlay-parent.js":1,"modules\/contextual\/contextual.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/modules\/devel 2\/devel_krumo_path.js":1,"modules\/toolbar\/toolbar.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/overlay\/overlay-parent.css":1,"modules\/contextual\/contextual.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/shortcut\/shortcut.css":1,"modules\/toolbar\/toolbar.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"themes\/bartik\/css\/colors.css":1,"themes\/bartik\/css\/print.css":1,"themes\/bartik\/css\/ie.css":1,"themes\/bartik\/css\/ie6.css":1}},"overlay":{"paths":{"admin":"node\/*\/edit\nnode\/*\/delete\nnode\/*\/revisions\nnode\/*\/revisions\/*\/revert\nnode\/*\/revisions\/*\/delete\nnode\/add\nnode\/add\/*\noverlay\/dismiss-message\nuser\/*\/shortcuts\nadmin\nadmin\/*\nbatch\ntaxonomy\/term\/*\/edit\nuser\/*\/cancel\nuser\/*\/edit\nuser\/*\/edit\/*\ndevel\/*\nnode\/*\/devel\nnode\/*\/devel\/*\ncomment\/*\/devel\ncomment\/*\/devel\/*\nuser\/*\/devel\nuser\/*\/devel\/*\ntaxonomy\/term\/*\/devel\ntaxonomy\/term\/*\/devel\/*","non_admin":"admin\/structure\/block\/demo\/*\nadmin\/reports\/status\/php"},"ajaxCallback":"overlay-ajax"},"tableHeaderOffset":"Drupal.toolbar.height"});
-//--><!]]>
-</script>
+<script type="text/javascript" language="Javascript" src="/_assets/js/script.js"></script>
+
 </head>
 <body class="html front logged-in one-sidebar sidebar-first page-node toolbar toolbar-drawer">
   <div id="skip-link">
@@ -71,9 +52,6 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
 
   <div id="header" class="with-secondary-menu"><div class="section clearfix">
 
-          <a href="/" title="Home" rel="home" id="logo">
-        <img src="/_assets/front/logo.png" alt="Home">
-      </a>
     
           <div id="name-and-slogan">
 
@@ -90,11 +68,7 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
 
 </ul>      </div> <!-- /#main-menu -->
     
-          <div id="secondary-menu" class="navigation">
-        <h2 class="element-invisible">Secondary menu</h2><ul id="secondary-menu-links" class="links inline clearfix"><li class="menu-2 first"><a href="/user">My account</a></li>
-<li class="menu-15 last"><a href="/user/logout">Log out</a></li>
-</ul>      </div> <!-- /#secondary-menu -->
-    
+          
   </div></div> <!-- /.section, /#header -->
 
   
@@ -107,22 +81,16 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
     
 <div id="block-block-1" class="block block-block contextual-links-region">
 
-    <h2>Iteration Two Update Details</h2>
+    <h2>Iteration Three Update Details</h2>
   <div class="contextual-links-wrapper"><ul class="contextual-links"><li class="block-configure first last"><a href="/admin/structure/block/manage/block/1/configure?destination=node">Configure block</a></li>
 </ul></div>
   <div class="content">
     <ol>
-    <li>Added JS alerts to dead end links</li>
-    <li>Added published/unpublished information to content listings</li>
-    <li>Fixed the broken home button on many pages</li>
-    <li>Added filter/sort action links to the toolbar in all pages that list items.</li>
-    <li>Removed the home button and made the toolbar title link back to the main admin page.</li> 
-    <li>All action buttons are now on the top right cover, not the ideal location but I think the should be lower priority than the title and the main content.</li>
-    <li>The toolbar now displays the page title on front facing pages. You can also add action buttons to front facing pages, like edit buttons on nodes.</li>
-    <li>Changed the styling of the admin list.</li>
+    <li>Completely rebuilt from the ground up to reduce load and make it more expandable.</li>
+    <li></li>
     </ol>  </div>
 </div>
-s
+
   </div>
       </div></div> <!-- /.section, /#sidebar-first -->
     
@@ -153,9 +121,7 @@ iaceo laoreet macto metuo quidne. Abluo iustum paulatim quia quidem
 ratis te vulpes. Autem diam dolore ludus neo nibh paratus quidem valde. 
 Bene duis hos lenis quibus tego.</p></div></div></div>  </div>
 
-      <div class="link-wrapper">
-      <ul class="links inline"><li class="node-readmore first last"><a href="/node-3-page" rel="tag" title="Ille Ratis">Read more<span class="element-invisible"> about Ille Ratis</span></a></li>
-</ul>    </div>
+      
   
   
 </div>
@@ -167,10 +133,7 @@ Bene duis hos lenis quibus tego.</p></div></div></div>  </div>
     <div class="contextual-links-wrapper"><ul class="contextual-links"><li class="node-edit first"><a href="/node/13/edit?destination=node">Edit</a></li>
 <li class="node-delete last"><a href="/node/13/delete?destination=node">Delete</a></li>
 </ul></div>
-      <div class="meta submitted">
-        <div class="user-picture">
-    <a href="/user/26" title="View user profile."><img typeof="foaf:Image" src="first.d8mux.org_files/picture-26.png" alt="uekaspoch's picture" title="uekaspoch's picture"></a>  </div>
-      <span property="dc:date dc:created" content="2011-08-19T23:29:24+01:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <a href="/user/26" title="View user profile." class="username" xml:lang="" about="/user/26" typeof="sioc:UserAccount" property="foaf:name">uekaspoch</a> on Fri, 08/19/2011 - 23:29</span>    </div>
+      
   
   <div class="content clearfix">
     <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Ad
@@ -183,10 +146,7 @@ torqueo validus virtus ymo. Aptent cui iustum modo. Augue damnum defui
 hos huic saluto sit sudo turpis uxor. Cui dolore esse euismod imputo 
 luptatum pagus patria singularis.</p></div></div></div>  </div>
 
-      <div class="link-wrapper">
-      <ul class="links inline"><li class="node-readmore first"><a href="/node-13-article" rel="tag" title="Autem Iusto Sino Tation">Read more<span class="element-invisible"> about Autem Iusto Sino Tation</span></a></li>
-<li class="comment-comments last"><a href="/node-13-article#comments" title="Jump to the first comment of this posting." property="sioc:num_replies" content="2" datatype="xsd:integer" rel="">2 comments</a></li>
-</ul>    </div>
+      
   
   
 </div>
@@ -206,10 +166,6 @@ vicis. Bene conventio elit eu euismod ille natu ymo. Eu gilvus populus.
 Amet importunus jugis olim os quidne scisco tincidunt verto. Brevitas 
 damnum esca inhibeo quibus ymo. Camur nulla plaga quibus si ut. Esse 
 haero minim neque saepius suscipit tamen ullamcorper.</p></div></div></div>  </div>
-
-      <div class="link-wrapper">
-      <ul class="links inline"><li class="node-readmore first last"><a href="/node-28-page" rel="tag" title="Abico Acsi Huic Ludus">Read more<span class="element-invisible"> about Abico Acsi Huic Ludus</span></a></li>
-</ul>    </div>
   
   
 </div>
@@ -231,9 +187,7 @@ utinam vero. Cui meus nulla praemitto rusticus validus. Defui dolore
 feugiat pecus uxor. Abluo bene cogo esse exerci minim nostrud occuro 
 odio.</p></div></div></div>  </div>
 
-      <div class="link-wrapper">
-      <ul class="links inline"><li class="node-readmore first last"><a href="/node-19-page" rel="tag" title="Nunc Pala Paratus Sit">Read more<span class="element-invisible"> about Nunc Pala Paratus Sit</span></a></li>
-</ul>    </div>
+      
   
   
 </div>
@@ -257,17 +211,14 @@ interdico jugis neo quibus tation valetudo volutpat.</p>
 <p>Autem melior obruo paulatim quidne valetudo wisi. Abluo caecus ibidem os quidem scisco. Ad adipiscing caecus cogo ideo in si.</p>
 </div></div></div>  </div>
 
-      <div class="link-wrapper">
-      <ul class="links inline"><li class="node-readmore first last"><a href="/node-14-page" rel="tag" title="Comis Venio Vindico Vulpes">Read more<span class="element-invisible"> about Comis Venio Vindico Vulpes</span></a></li>
-</ul>    </div>
+      
   
   
 </div>
 
 </div>
   </div>
-      <a href="/rss.xml" class="feed-icon" title="Subscribe to test.d8mux.org RSS"><img typeof="foaf:Image" src="first.d8mux.org_files/feed.png" alt="Subscribe to test.d8mux.org RSS" height="16" width="16"></a>
-    </div></div> <!-- /.section, /#content -->
+          </div></div> <!-- /.section, /#content -->
 
     
   </div></div> <!-- /#main, /#main-wrapper -->

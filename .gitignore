@@ -16,3 +16,7 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
+.gitignore
+_assets/css/style.css.bak
+D8MUX REDUX.esproj/Project.espressostorage
+D8MUX REDUX.esproj/user.Lewis.espressostorage
