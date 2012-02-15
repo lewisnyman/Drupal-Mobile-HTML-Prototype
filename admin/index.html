@@ -14,6 +14,8 @@
 <script>window.scroll(0, 0); </script>
 <script type="text/javascript" language="Javascript" src="/_assets/js/zepto.min.js"></script>
 <script type="text/javascript" language="Javascript" src="/_assets/js/swipe.js"></script>
+<script type="text/javascript" language="Javascript" src="/_assets/js/search.js"></script>
+<script type="text/javascript" language="Javascript" src="/_assets/js/mustache.js"></script>
 
 
 <script type="text/javascript" language="Javascript" src="/_assets/js/script.js"></script>
@@ -30,7 +32,13 @@
   
     <div id="toolbar" class="toolbar clearfix">
       <div class="toolbar-menu clearfix">
+      <ul class="action-links"><li><a id="search"><img height="18" src="/_assets/img/zoom_icon_24.png" /></a></li>
+      </ul>
         <h1>Administration</h1>
+      </div>
+      <div class="search-form">
+        <ul class="action-links"><li><a id="cancel">Cancel</a></li></ul>
+        <input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" placeholder="Search" />
       </div>
     </div> 
   
@@ -39,6 +47,10 @@
       <div class="content">
       <ul class="admin-list"><li class="leaf"><a href="/content">Content<span class="description">Administer content and comments.</span></a></li><li class="leaf"><a href="/structure">Structure<span class="description">Administer blocks, content types, menus, etc.</span></a></li><li class="leaf"><a href="/appearance">Appearance<span class="description">Select and configure your themes.</span></a></li><li class="leaf"><a href="/people">People<span class="description">Manage user accounts, roles, and permissions.</span></a></li><li class="leaf"><a href="/modules">Modules<span class="description">Extend site functionality.</span></a></li><li class="leaf"><a href="/configuration">Configuration<span class="description">Administer settings.</span></a></li><li class="leaf"><a href="/reports">Reports<span class="description">View reports, updates, and errors.</span></a></li></ul>
       </div>
+    </div>
+    
+    <div class="search-results">
+
     </div>
     
   </li>
