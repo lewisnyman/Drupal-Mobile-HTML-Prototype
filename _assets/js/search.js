@@ -15,6 +15,7 @@ function main() {
 }
 
 function constructNavTree() {
+var nothing = "javascript:alert('Currently this does nothing. It's a cool idea though right?')";
   window.tree.push(new leaf('Admin','/admin','navigation'));//ROOT
   
   window.tree.push(new leaf('Content','/content','navigation'));//CONTENT
@@ -93,6 +94,16 @@ function constructNavTree() {
   window.tree.push(new leaf('Development - Maintenance mode','/configuration','configuration'));
   window.tree.push(new leaf('Development - Devel settings','/configuration','configuration'));
   window.tree.push(new leaf('Web services - RSS publishing','/configuration','configuration'));
+  
+  window.tree.push(new leaf('Clear cache',nothing,'drush'));//DRUSH LITE :D
+  window.tree.push(new leaf('Image flush',nothing,'drush'));
+  window.tree.push(new leaf('Update database',nothing,'drush'));
+  window.tree.push(new leaf('Project disable ...',nothing,'drush'));
+  window.tree.push(new leaf('Project download ...',nothing,'drush'));  
+  window.tree.push(new leaf('Project enable ...',nothing,'drush'));
+  window.tree.push(new leaf('Project uninstall ...',nothing,'drush'));
+  window.tree.push(new leaf('Project update ...',nothing,'drush'));
+  window.tree.push(new leaf('Run cron',nothing,'drush'));  
 }
 
 function leaf(name, url, category, altnames) {  
@@ -102,22 +113,41 @@ function leaf(name, url, category, altnames) {
   this.altnames = altnames;
 }  
 
-function searchSetup() {//Add mark up and stuff
-  var html = "<div class='search-form'><input placeholder='Search' type='search' /><ul class='action-links'><li><a id='cancel'>Cancel</a></li></ul></div>";
-  $('.slider .current #toolbar .toolbar-menu .action-links #search').click(function() {
-    var pageheight = $('.slider .current .page').height();
-    window.scroll(0, 0);
-    $('.slider .current #toolbar').addClass('search-active');
-    $('.slider .current .search-results').html('').addClass('active').css('min-height', pageheight);
-    $('.slider .current .search-form input[type="search"]').val('').focus().keyup(function() {
-      getSearchResults($(this));
-    });
-  });
-$('.slider .current #toolbar .search-form .action-links #cancel').click(function() {
-  window.scroll(0, 0);
-  $('.slider .current  #toolbar').removeClass('search-active');
-  $('.slider .current .search-results').removeClass('active');
+function searchSetup() {
+  $('.slider .current .toolbar .toolbar-menu .action-links #search').live("tap",function() {
+  activateSearch();
+ }).live('click', function(event) {
+   if(!isTouch()) {
+     activateSearch();
+   }
+   event.preventDefault();
+ });
+  
+$('.slider .current .toolbar .search-form .action-links #cancel').live("tap",function(event) {
+  toggleSearch();
+  event.preventDefault();
+}).live('click', function(event) {
+  if(!isTouch()) {
+    toggleSearch();
+  }
+  event.preventDefault();
 });
+
+}
+
+function activateSearch() {
+  var pageheight = $('.slider .current .page').height();
+  $('.slider .current .search-results').css('min-height', pageheight);  
+   $('.slider .current .search-form input[type="search"]').val('').focus().keyup(function() {
+     getSearchResults($(this));
+   });
+   toggleSearch(); 
+}
+
+function toggleSearch() {
+  window.scroll(0, 0);
+  $('.slider .current  .toolbar').toggleClass('search-active');
+$('.slider .current .search-results').html('').toggleClass('active')
 }
 
 function getSearchResults(input) {
@@ -125,22 +155,49 @@ function getSearchResults(input) {
   var matches;
   if (term.length > 0) {
     matches = getIndexes(window.tree,term);
+    var results = $('.slider .current .search-results');
+    var output = buildSearchResults(matches, term);
+    results.html(output);
   }
-  var results = $('.slider .current .search-results');
+};
+
+function buildSearchResults(matches, term) {
   if (matches.length) {
+    var onpage = "";
     var output = "<ul class='admin-list'>";
+    var path = window.location.pathname;
+    
     $(matches).each(function(i) {
       matchid = matches[i];
       el = window.tree[matchid];
-      output += Mustache.render(templates.searchResult, el);
+      //var urlArray = el.url.split('/');
+      //var url = constructParentUrl(urlArray);
+      if(el.url == path) {
+        onpage += Mustache.render(templates.searchResult, el);//If it on the same page add it to another string
+      } else {
+        output += Mustache.render(templates.searchResult, el);
+      }
     });
     output += "</ul>";
+    if(onpage != "") {
+      onpage = "<h2>Current page</h2><ul class='admin-list'>" + onpage + "</ul>";
+      output = onpage + "<h2>Elsewhere</h2>" + output;
+    }
   }
   else {
-    output = 'No Results';
+    output = '<p>No Results &#8212; <a target="_blank" href="http://drupal.org/search/apachesolr_multisitesearch/'+ term + '">Search Drupal.org for ' + term + '?</a></p>';
   }
-  results.html(output);
-};
+  return output;
+}
+
+function constructParentUrl(array){
+  var url = "";
+  for ( i = 0; pathArray.length -1; i++ ) {
+    newPathname += "/";
+    newPathname += pathArray[i];
+  }
+  return url;
+}
 
 function getIndexes(array,what) {
     var indexes = [], what = ' ' + what.toLowerCase();

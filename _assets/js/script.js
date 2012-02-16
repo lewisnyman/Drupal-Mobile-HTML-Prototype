@@ -3,6 +3,10 @@ $(document).ready(function(){ ready(); }); // call function after DOM is ready t
 function ready() {
 var adminlinks = $('.admin-list .leaf a');
 
+
+
+if ( Modernizr.csstransforms ) {
+
 window.slider = new Swipe(
   document.getElementById('wrapper'), {
   callback: function(e, pos) {
@@ -11,25 +15,43 @@ window.slider = new Swipe(
   }
 ); 
 
-adminlinks
-  .live('click', function(event) {
-    if(!isTouch()) {
+$('.current .toolbar #close').live('click', function(event) {
+  if(!isTouch()) {
+    var href = $(this).attr('href');
+    window.location = href;  
+  }
+  event.preventDefault();
+}).live('tap', function(){ 
+ var href = $(this).attr('href');
+ window.location = href;  
+ 
+});
+  
+  adminlinks
+    .live('click', function(event) {
+      if(!isTouch()) {
+        history.pushState({ path: this.path }, '', this.href);
+        $(this).loadNextPage();
+      }
+      event.preventDefault();
+    })
+    .live('tap', function(){ 
       history.pushState({ path: this.path }, '', this.href);
       $(this).loadNextPage();
-    }
-    event.preventDefault();
-  })
-  .live('tap', function(){ 
-    history.pushState({ path: this.path }, '', this.href);
-    $(this).loadNextPage();
-  })
-  .live('swipeRight', function(){
-      //console.log("Swipe");
-  });
+    })
+    .live('swipeRight', function(){
+        //console.log("Swipe");
+    });
+  
+    $(window).bind('popstate', function() {
+      slider.prev();
+    })
+}
+else {
+  alert("Hi. So I've been told your browser does not support CSS transforms. The fancy navigation with one to one gestures have been disabled. You can still browse the prototype but it will be missing some good features. I recommend downloading a more capable browser if possible or grabbing the iPhone/Opera emulator.");
+}
 
-  $(window).bind('popstate', function() {
-    slider.prev();
-  })
+
 
 }
 
@@ -46,13 +68,13 @@ Zepto.fn.loadNextPage = function() {
   nextpage.load(url, function() {
      $('body').removeClass('ui-loading');
     slider.next();
+    window.scroll(0, 0); 
     removeFutureSteps();
   })
 
 };
 
 function addNewStep(callback) {
-  console.log('Creating new li');
   $(".slider").append('<li></li>');
   slider.setup();
   callback();

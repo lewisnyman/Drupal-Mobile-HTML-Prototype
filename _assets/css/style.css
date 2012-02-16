@@ -7,7 +7,7 @@ body {
   -webkit-text-size-adjust: 100%
 }
 
-ul.links, ul.links.inline, ul.links li, .block ul, ol, ul, .item-list ul, .item-list ul li {
+ul.links, ul.links.inline, ul.links li, .block ul, ul, .item-list ul, .item-list ul li {
     list-style: none outside none;
 }
 
@@ -26,9 +26,6 @@ body, #wrapper {
 .slider {
   padding: 0;
   margin: 0;
-  -webkit-box-shadow: 0px 0px 4px 0px #000; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
- -moz-box-shadow: 0px 0px 4px 0px #000; /* FF3.5 - 3.6 */
-box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
 }
 
 .slider > li {
@@ -140,6 +137,10 @@ box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, 
   border-radius: 4px;
   }
   
+  #close {
+   // display: none;
+  }
+  
   .search-form  {
     display: none;
   }
@@ -148,7 +149,7 @@ box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, 
     display: block;
   }
   
-  .search-form.active a {
+  .search-form a {
     display: inline-block;
   }
   
@@ -162,6 +163,12 @@ box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, 
     display: block;
     width: 70%;
     margin-right: 2%;
+  }
+  
+  @media all and (max-width: 480px) {
+     .search-form input[type="search"] {
+       width: 60%;
+     }
   }
   
   .search-results {
@@ -215,7 +222,9 @@ box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, 
     background-image: url(/_assets/img/user_icon&24.png);  
   }
   
-  
+  .search-results .drush a {
+    background-image: url(/_assets/img/app_window_shell_icon&24.png);  
+  }
   
   .admin-panel .item-list ul, ul.admin-list {
       margin: 0;
@@ -249,6 +258,16 @@ box-shadow: 0 0 20px 4px rgba(0,0,0, 0.2); /* Opera 10.5, IE9, FF4+, Chrome 6+, 
     ul.admin-list li a .description {
       display: block;
       color: #666;
+    }
+    
+    #system-themes-page .leaf a {
+      overflow: hidden;
+    }
+    
+    #system-themes-page .screenshot {
+      float:  left;
+      margin-right: 5%;
+      max-width: 40%;
     }
     
     .cf:before,

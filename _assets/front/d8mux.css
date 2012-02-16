@@ -2,84 +2,9 @@ body {
   padding-top: 0!important;
 }
 
-.not-front #page {
-  padding: 0;
-  margin-left: 3%;
-  margin-right: 3%;
-}
 
 #block-system-main {
   margin-top:  20px;
-}
-
-#toolbar {
-  background: #000;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  height: 13mm;
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-
-#toolbar div.toolbar-menu  {
-  min-height: 34px;
-    font-size: 1.5em;
-  padding-right: 0;
-  padding-left: 3%;
-  }
-  
-#toolbar div.toolbar-menu h1 {
-font-weight: normal;
-  padding: 8px 0;
-  margin-right: 2%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-#toolbar div.toolbar-menu h1 a { 
-  display: block;
-}
-#toolbar div.toolbar-menu ul {
-  float: right;
-  margin-right: 2%;
-}
-
-#toolbar div.toolbar-menu ul li a {
-    background: none repeat scroll 0 0 #444444;
-    border-right: solid 1px #000;
-    display: block;
-    line-height: auto;
-    padding: 8px 10px;
-    position: relative;
-  }
-  
-#toolbar div.toolbar-menu ul li a select {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    width: 100%;
-}
-  
-#toolbar div.toolbar-menu ul li:first-child a {
- -webkit-border-radius: 4px 0 0 4px;
- -moz-border-radius: 4px 0 0 4px;
- border-radius: 4px 0 0 4px; 
-}
-
-#toolbar div.toolbar-menu ul li:last-child a {
- -webkit-border-radius: 0 4px 4px 0;
- -moz-border-radius: 0 4px 4px 0;
- border-radius: 0 4px 4px 0; 
-}
-
-#toolbar div.toolbar-menu ul li:last-child:first-child a {
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
 }
 
   
@@ -97,27 +22,6 @@ border-radius: 4px;
     margin-bottom: 0;
   }
   
-   ul.admin-list li a {
-    //background: url("images/list-item.png") no-repeat scroll center right transparent;
-     border-top: 1px solid #CCC;
-     color: #000;
-     display: block;
-         min-height: 45px;
-         margin-left: 0;
-         padding-left: 0;
-     padding-top: 9px;
-     padding-right: 30px;
-      padding-bottom: 9px;
-   }
-      ul.admin-list li a:hover {
-        background-color: #CCC;
-         text-decoration: none;
-      }
-  
-  ul.admin-list li a .description {
-    display: block;
-    color: #666;
-  }
   
   .hide {
     display: none;
@@ -130,12 +34,3 @@ border-radius: 4px;
     display: none;
   }
   
-  #system-themes-page .leaf a {
-    overflow: hidden;
-  }
-  
-  #system-themes-page .screenshot {
-    float:  left;
-    margin-right: 5%;
-    max-width: 40%;
-  }
