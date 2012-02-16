@@ -120,7 +120,6 @@ function searchSetup() {
    if(!isTouch()) {
      activateSearch();
    }
-   event.preventDefault();
  });
   
 $('.slider .current .toolbar .search-form .action-links #cancel').live("tap",function(event) {
