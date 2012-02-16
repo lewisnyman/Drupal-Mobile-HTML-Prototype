@@ -3,8 +3,6 @@ $(document).ready(function(){ ready(); }); // call function after DOM is ready t
 function ready() {
 var adminlinks = $('.admin-list .leaf a');
 
-
-
 if ( Modernizr.csstransforms ) {
 
 window.slider = new Swipe(
@@ -30,13 +28,12 @@ $('.current .toolbar #close').live('click', function(event) {
   adminlinks
     .live('click', function(event) {
       if(!isTouch()) {
-        history.pushState({ path: this.path }, '', this.href);
+        //history.pushState({ path: this.path }, '', this.href);
         $(this).loadNextPage();
       }
       event.preventDefault();
     })
     .live('tap', function(){ 
-      history.pushState({ path: this.path }, '', this.href);
       $(this).loadNextPage();
     })
     .live('swipeRight', function(){
@@ -57,10 +54,11 @@ else {
 
 Zepto.fn.loadNextPage = function() {
   var o = $(this[0]) // It's your element
-  var url = o.attr('href') + '/ #wrapper';
+  var href = o.attr('href');
+  var url = href + '/ #wrapper';
   var nextpage = $('.slider > li.current + li');
  if (nextpage.length == 0) {//Create a new li if we need one
-    addNewStep(function() {
+    addNewStep(href, function() {
     nextpage = $('.slider > li.current + li');  
   });
  } 
@@ -74,8 +72,8 @@ Zepto.fn.loadNextPage = function() {
 
 };
 
-function addNewStep(callback) {
-  $(".slider").append('<li></li>');
+function addNewStep(url,callback) {
+  $(".slider").append('<li data-url="' + url + '"></li>');
   slider.setup();
   callback();
 }
@@ -93,11 +91,14 @@ function removeFutureSteps() {
 function setCurrentSlide() {
   var pos = slider.getPos();
   pos++;
+  var currentslide = $('.slider > li:nth-child(' + pos + ')');
   $('.slider > li').removeClass('current');
-  $('.slider > li:nth-child(' + pos + ')').addClass('current');
+  currentslide.addClass('current');
+  var url = currentslide.attr('data-url');
+  history.pushState({ path: url }, '', url);
 }
 
 
 function isTouch() {
-  return ('ontouchstart' in window)
+  return (Modernizr.touch)
 }
