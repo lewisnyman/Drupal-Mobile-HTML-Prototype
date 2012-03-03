@@ -289,7 +289,43 @@ display: block;
 .ui-loader { background-color: #000; opacity: .18; display: none; z-index: 9999999; position: fixed; width: 46px; height: 46px; top: 50%; box-shadow: 0 1px 1px -1px #fff; margin-left: -18px; margin-top: -18px; left: 50%; padding: 1px; border:0; -webkit-border-radius: 36px; -moz-border-radius: 36px; border-radius: 36px; }
 .ui-loader h1 { font-size: 0px; width: 0; height: 0; overflow: hidden; }
 .ui-loader .ui-icon { display: block; margin: 0; width: 46px; height: 46px; background-color: transparent; }
- 
+
+/* Forms */
+
+input[type="checkbox"] {
+  
+}
+
+input[type="checkbox"]:before {
+background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+
+border: 1px solid #333;
+
+font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+  color: #FFF;
+  content: "ON";
+  padding: 3px;
+  position: relative;
+  left: 20px;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+  
+  -webkit-border-radius: 3px; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+       -moz-border-radius: 3px; /* FF1-3.6 */
+            border-radius: 3px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+  
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+input[type="checkbox"][checked]:before{
+  content: 'OFF';
+} 
 /* CSS Animations from jQuery mobile */
  
  /* slide transition */

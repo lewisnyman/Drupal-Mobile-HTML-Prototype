@@ -1,7 +1,7 @@
 $(document).ready(function(){ ready(); }); // call function after DOM is ready to use (before load event fires)
 
 function ready() {
-var adminlinks = $('.admin-list .leaf a');
+var adminlinks = $('.admin-list .leaf a, .current .toolbar #add');
 
 if ( Modernizr.csstransforms ) {
 
