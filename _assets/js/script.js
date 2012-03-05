@@ -2,7 +2,7 @@ $(document).ready(function(){ ready(); }); // call function after DOM is ready t
 
 function ready() {
 var adminlinks = $('.admin-list .leaf a, .current .toolbar #add');
-
+var deletelink = $('.current .toolbar #delete');
 if ( Modernizr.csstransforms ) {
 
 window.slider = new Swipe(
@@ -22,13 +22,26 @@ $('.current .toolbar #close').live('click', function(event) {
 }).live('tap', function(){ 
  var href = $(this).attr('href');
  window.location = href;  
- 
 });
+
+deletelink
+  .live('click', function(event) {
+    if(!isTouch()) {
+      if (confirm("Delete Item?")) {
+        slider.prev();
+      }
+    }
+    event.preventDefault();
+  })
+  .live('tap', function(){ 
+      if (confirm("Delete Item?")) {
+        slider.prev();
+      }
+  });
   
   adminlinks
     .live('click', function(event) {
       if(!isTouch()) {
-        //history.pushState({ path: this.path }, '', this.href);
         $(this).loadNextPage();
       }
       event.preventDefault();
@@ -42,6 +55,7 @@ $('.current .toolbar #close').live('click', function(event) {
   
     $(window).bind('popstate', function() {
       slider.prev();
+      return false;
     })
 }
 else {

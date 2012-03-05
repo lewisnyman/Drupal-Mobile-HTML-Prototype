@@ -86,6 +86,15 @@ body, #wrapper {
     font-size: 0.846em;
     text-decoration: none;
 }
+
+.toolbar a select {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
   
 .toolbar div.toolbar-menu h1 {
   color: #FFF;
@@ -326,6 +335,8 @@ font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
 input[type="checkbox"][checked]:before{
   content: 'OFF';
 } 
+
+
 /* CSS Animations from jQuery mobile */
  
  /* slide transition */
