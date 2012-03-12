@@ -289,6 +289,81 @@ body, #wrapper {
         clear:both;
     }
     
+    
+  .tabs {
+    list-style: none outside none;
+    padding: 0;
+    margin: 1.5em 0;
+    overflow: hidden;
+  }
+  
+  .tabs li {
+    float: left;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .tabs li a,
+  .tabs li a:active ~ li.active a {
+    background-color: #fdfdfd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #fdfdfd, #eeeeee); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #fdfdfd, #eeeeee); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #fdfdfd, #eeeeee); /* IE10 */
+    background-image:      -o-linear-gradient(top, #fdfdfd, #eeeeee); /* Opera 11.10+ */
+    background-image:         linear-gradient(to bottom, #fdfdfd, #eeeeee);
+    color: #333;
+    display: block;
+    height: 100%;
+    border: 1px solid #A6A7A2;
+    padding: 0.8em 2px 0.9em;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent; 
+  }
+  
+ .tabs li.active a,
+ .tabs li a:active {
+   background-color: #ededed;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#dadada)); /* Saf4+, Chrome */
+   background-image: -webkit-linear-gradient(top, #ededed, #dadada); /* Chrome 10+, Saf5.1+, iOS 5+ */
+   background-image:    -moz-linear-gradient(top, #ededed, #dadada); /* FF3.6 */
+   background-image:     -ms-linear-gradient(top, #ededed, #dadada); /* IE10 */
+   background-image:      -o-linear-gradient(top, #ededed, #dadada); /* Opera 11.10+ */
+   background-image:         linear-gradient(to bottom, #ededed, #dadada);  
+ }
+  
+  .tabs li:first-child a{
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px; 
+  }
+  
+  .tabs li:last-child a{
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0; 
+  }
+  
+  .tabs li + li a {
+    border-left: 0 none transparent;
+  }
+  
+  .tabs.items-two li {
+    width: 50%;
+  } 
+  
+  .tabs.items-three li {
+    width: 33.333;
+  } 
+  
+  .tabs.items-four li {
+    width: 25%;
+  } 
+  
+  .tabs.items-five li {
+    width: 20%;
+  } 
+    
 /* loading screen */
 .ui-loading .ui-loader { 
 display: block;      

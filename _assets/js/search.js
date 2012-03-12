@@ -1,5 +1,5 @@
 $(document).ready(function(){ 
-  search.main(); 
+  searchMain(); 
 }); 
 
 //GLOBALS
@@ -9,7 +9,7 @@ templates = {
  searchResult : "<li class='leaf result {{category}}'><a href='{{url}}'>{{name}}</a></li>",
  }
 
-search.main= function() {
+searchMain = function() {
   constructNavTree();
   searchSetup();
 }

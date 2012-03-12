@@ -3,6 +3,7 @@ $(document).ready(function(){ ready(); }); // call function after DOM is ready t
 function ready() {
 var adminlinks = $('.admin-list .leaf a, .current .toolbar #add');
 var deletelink = $('.current .toolbar #delete');
+var tabs = $('.tabs li a');
 if ( Modernizr.csstransforms ) {
 
 window.slider = new Swipe(
@@ -62,8 +63,28 @@ else {
   alert("Hi. So I've been told your browser does not support CSS transforms. The fancy navigation with one to one gestures have been disabled. You can still browse the prototype but it will be missing some good features. I recommend downloading a more capable browser if possible or grabbing the iPhone/Opera emulator.");
 }
 
+tabs
+.live('click', function(event) {
+  if(!isTouch()) {
+    $(this).loadInPage();
+  }
+  event.preventDefault();
+})
+.live('tap', function(){ 
+    $(this).loadInPage();
+});
+}
 
-
+Zepto.fn.loadInPage = function() {
+  var o = $(this[0]) // It's your element
+  var href = o.attr('href');
+  var url = href + '/ #wrapper';
+  var currentPage = $('.slider > li.current'); 
+  $('body').addClass('ui-loading');
+  currentPage.load(url, function() {
+    $('body').removeClass('ui-loading'); 
+    removeFutureSteps();
+  });
 }
 
 Zepto.fn.loadNextPage = function() {
@@ -76,6 +97,9 @@ Zepto.fn.loadNextPage = function() {
     nextpage = $('.slider > li.current + li');  
   });
  } 
+ else {
+   nextpage.attr('data-url', href);
+ }
  $('body').addClass('ui-loading');
   nextpage.load(url, function() {
      $('body').removeClass('ui-loading');
