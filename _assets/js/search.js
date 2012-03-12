@@ -32,19 +32,19 @@ var nothing = "javascript:alert('Currently this does nothing. It's a cool idea t
   
   window.tree.push(new leaf('Content types','/structure/content-types','navigation'));
   window.tree.push(new leaf('Add content type','/structure/content-types/add','creation'));
-  window.tree.push(new leaf('List content type','/structure/content-types/list','navigation'));
-  
-  window.tree.push(new leaf('Menus','/structure/menu','navigation'));
-  window.tree.push(new leaf('Add Menu','/structure/menu/add','creation'));
-  window.tree.push(new leaf('List Menus','/structure/menu/list','navigation'));
-  window.tree.push(new leaf('Main Menu','/structure/menu/list','menu'));
-  window.tree.push(new leaf('Management','/structure/menu/list','menu'));
-  window.tree.push(new leaf('Navigation','/structure/menu/list','menu'));
-  window.tree.push(new leaf('User menu','/structure/menu/list','menu'));
+  window.tree.push(new leaf('Article','/structure/content-types','creation'));
+  window.tree.push(new leaf('Basic Page','/structure/content-types','creation'));
+    
+  window.tree.push(new leaf('Menus','/structure/menus','navigation'));
+  window.tree.push(new leaf('Add Menu','/structure/menus/add','creation'));
+  window.tree.push(new leaf('Main Menu','/structure/menus','menu'));
+  window.tree.push(new leaf('Management','/structure/menus','menu'));
+  window.tree.push(new leaf('Navigation','/structure/menus','menu'));
+  window.tree.push(new leaf('User menu','/structure/menus','menu'));
 
   window.tree.push(new leaf('Taxonomy','/structure/taxonomy','navigation'));
   window.tree.push(new leaf('Add Vocabulary','/structure/taxonomy/add','creation'));
-  window.tree.push(new leaf('List Vocabulary','/structure/taxonomy/add','navigation'));
+  window.tree.push(new leaf('Vocabulary','/structure/taxonomy/vocabulary','navigation'));
   
 
   window.tree.push(new leaf('Appearance','/appearance','navigation', 'Themes'));//THEMES
