@@ -146,9 +146,10 @@ body, #wrapper {
   border-radius: 4px;
   }
   
-  #close {
-   // display: none;
-  }
+  .toolbar ul.bulk {
+    display: none;
+  }  
+  
   
   .search-form  {
     display: none;
@@ -303,8 +304,7 @@ body, #wrapper {
     text-align: center;
   }
   
-  .tabs li a,
-  .tabs li a:active ~ li.active a {
+  .tabs li a {
     background-color: #fdfdfd;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee)); /* Saf4+, Chrome */
     background-image: -webkit-linear-gradient(top, #fdfdfd, #eeeeee); /* Chrome 10+, Saf5.1+, iOS 5+ */

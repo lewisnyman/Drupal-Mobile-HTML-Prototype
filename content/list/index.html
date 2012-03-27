@@ -27,12 +27,20 @@
 </ul>
 
         
-<ul class="action-links"><li><a href="/content/add" id="add">+</a></li><li><a data-attributes="Status,Type" id="filter">
-<select>  <option>Filter by:</option>
+<ul class="action-links"><li><a href="/content/add" id="add">+</a></li>
+<li><a id="bulk"><img height="18" src="/_assets/img/white_list_bullets_icon&24.png" /></a></li>
+<li><a data-attributes="Status,Type" id="filter">
+<select multiple>  <option>Filter by:</option>
 <option>Status</option>
 <option>Type</option>
 </select>
 <img height="18" src="/_assets/img/filter_icon&24.png" /></a></li>
+</ul>
+
+<ul class="bulk action-links">
+  <li><a>Publish</a></li>
+  <li><a>Delete</a></li>
+  <li><a id="cancel">Cancel</a></li>
 </ul>
 
       <h1>Content</h1>
@@ -52,13 +60,13 @@
     
   <div class="content">
     <ul class="admin-list">
-    <li class="leaf"><a href="/content/node">Erat El Nimis Zelus <span class="description">A published 'Article' by vothos <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
+    <li class="leaf" data-actions="Publish Delete"><a href="/content/node">Erat El Nimis Zelus <span class="description">A published 'Article' by vothos <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
     
-    <li class="leaf"><a href="/content/node">Augue Letalis<span class="description">An <em>unpublished</em> 'Basic page' by stuslic <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
+    <li class="leaf" data-actions="Publish Delete"><a href="/content/node">Augue Letalis<span class="description">An <em>unpublished</em> 'Basic page' by stuslic <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
     
-    <li class="leaf"><a href="/content/node">Luctus Vicis<span class="description">A published 'Basic page' by closhiwroho <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
+    <li class="leaf" data-actions="Publish Delete"><a href="/content/node">Luctus Vicis<span class="description">A published 'Basic page' by closhiwroho <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
     
-    <li class="leaf"><a href="/content/node">Jus Praemetto Venio<span class="description">An <em>unpublished</em> 'Article' by stanececrup <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
+    <li class="leaf" data-actions="Publish Delete"><a href="/content/node">Jus Praemetto Venio<span class="description">An <em>unpublished</em> 'Article' by stanececrup <em> - Updated at 00:14, 08/20/2011</em></span></a></li>
     
   </ul>
 </div>

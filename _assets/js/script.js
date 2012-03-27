@@ -5,14 +5,24 @@ var adminlinks = $('.admin-list .leaf a, .current .toolbar #add');
 var deletelink = $('.current .toolbar #delete');
 var tabs = $('.tabs li a');
 if ( Modernizr.csstransforms ) {
-
 window.slider = new Swipe(
   document.getElementById('wrapper'), {
   callback: function(e, pos) {
     setCurrentSlide();
   },
   }
-); 
+);
+window.slidertouchbackup = window.slider.onTouchStart; 
+
+$('.current .toolbar #bulk').live('click', function(event) {
+  if(!isTouch()) {
+    bulkEditPage();
+  }
+  event.preventDefault();
+}).live('tap', function(){ 
+     bulkEditPage();  
+});
+
 
 $('.current .toolbar #close').live('click', function(event) {
   if(!isTouch()) {
@@ -49,9 +59,6 @@ deletelink
     })
     .live('tap', function(){ 
       $(this).loadNextPage();
-    })
-    .live('swipeRight', function(){
-        //console.log("Swipe");
     });
   
     $(window).bind('popstate', function() {
@@ -134,6 +141,27 @@ function setCurrentSlide() {
   currentslide.addClass('current');
   var url = currentslide.attr('data-url');
   history.pushState({ path: url }, '', url);
+}
+
+function bulkEditPage() {
+ window.slider.onTouchStart = null;//Disable scrolling
+ $('.current .toolbar ul.action-links').hide();//Hide all toolbar button but the bulk flow ones.
+ $('.current .toolbar ul.action-links.bulk').show();
+ $('.current .toolbar ul.action-links.bulk #cancel').live('click', function(event) {
+   disableBulkEdit();
+ })
+ checkbox = "<div class='animated fadeInLeft bulk-select'><input type='checkbox' /></div>";
+ $('.admin-list .leaf a').die();
+ $('.current .admin-list .leaf a').each(function(index) {
+     $(this).prepend(checkbox);
+ });
+}
+
+function disableBulkEdit() {
+  $('.current .toolbar ul.action-links').show();
+  $('.current .toolbar ul.action-links.bulk').hide();
+  $('.current .admin-list .leaf a .bulk-select').remove();
+  window.slider.onTouchStart = window.slidertouchbackup;
 }
 
 
