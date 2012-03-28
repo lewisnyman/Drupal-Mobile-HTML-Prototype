@@ -12,7 +12,6 @@ window.slider = new Swipe(
   },
   }
 );
-window.slidertouchbackup = window.slider.onTouchStart; 
 
 $('.current .toolbar #bulk').live('click', function(event) {
   if(!isTouch()) {
@@ -21,6 +20,15 @@ $('.current .toolbar #bulk').live('click', function(event) {
   event.preventDefault();
 }).live('tap', function(){ 
      bulkEditPage();  
+});
+
+$('.current .toolbar ul.action-links.bulk #cancel').live('click', function(event) {
+  if(!isTouch()) {
+     disableBulkEdit();
+  }
+  event.preventDefault();
+}).live('tap', function(){ 
+      disableBulkEdit(); 
 });
 
 
@@ -144,14 +152,12 @@ function setCurrentSlide() {
 }
 
 function bulkEditPage() {
- window.slider.onTouchStart = null;//Disable scrolling
+ //window.slider.onTouchStart = function(){ console.log('swiping disabled');};//Disable scrolling
  $('.current .toolbar ul.action-links').hide();//Hide all toolbar button but the bulk flow ones.
  $('.current .toolbar ul.action-links.bulk').show();
- $('.current .toolbar ul.action-links.bulk #cancel').live('click', function(event) {
-   disableBulkEdit();
- })
- checkbox = "<div class='animated fadeInLeft bulk-select'><input type='checkbox' /></div>";
- $('.admin-list .leaf a').die();
+ checkbox = "<div class='animated bulk-select'><input type='checkbox' /></div>";
+ $('.current .admin-list .leaf').addClass('draggable');
+  setOffsets();
  $('.current .admin-list .leaf a').each(function(index) {
      $(this).prepend(checkbox);
  });
@@ -161,7 +167,7 @@ function disableBulkEdit() {
   $('.current .toolbar ul.action-links').show();
   $('.current .toolbar ul.action-links.bulk').hide();
   $('.current .admin-list .leaf a .bulk-select').remove();
-  window.slider.onTouchStart = window.slidertouchbackup;
+   $('.current .admin-list .leaf').removeClass('draggable');
 }
 
 
